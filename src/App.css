@@ -1,0 +1,718 @@
+:root{
+  --bg-clr : #fff;
+  --bg-light : rgb(209, 203, 203);
+  --clr : rgb(30, 48, 80);
+  --p-clr : red;
+  --title-font : 3rem;
+  --header-font : 2rem;
+  --font-size : 1.5rem;
+  --shadow : 1px 1px 20px 5px rgba(150, 150, 150,1);
+}
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  
+}
+p{
+  font-size: var(--font-size);
+}
+html{
+  font-size: 75%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+  height: fit-content;
+}
+@media (max-width:1100px) {
+  html{
+    font-size: 50%;
+  }
+}
+body{
+  overflow-x: hidden;
+}
+main{
+  padding-top: 10rem;
+}
+section{
+  padding: 3rem 3rem;
+}
+section h1{
+  text-align: center;
+  font-weight: bolder;
+  font-size: var(--title-font);
+  padding-bottom: 2rem;
+}
+
+/* _____________________________   header [img,navbar,icons]  _____________________________ */
+
+.header{
+  background: var(--bg-clr);
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.2rem solid var(--clr);
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  padding-right: 7rem;
+  padding-left: 3rem;
+  z-index: 10;
+  position: fixed;
+}
+.header .logo img{
+  width: 200px;
+}
+
+/*---------- nav bar -----------*/
+.header .navbar{
+  background: var(--bg-clr);
+  font-weight: 400;
+}
+.header .navbar a{
+  background: var(--bg-clr);
+  margin:  0 1.5rem;
+  font-size: 1.6rem;
+  color: var(--clr);
+  text-decoration: none;
+  transition: none;
+}
+.header .navbar a:hover{
+  border-bottom: 0.2rem solid var(--clr);
+  font-weight: 500;
+}
+
+/*----------- icons[contact,menu btn] -----------*/
+.header .icons{
+  background: var(--bg-clr);
+  right: 10px;
+}
+.header .icons div{
+  color: var(--clr);
+  background: var(--bg-clr);
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+.header .icons div:hover{
+  animation-name: role;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+@keyframes role {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+  }
+
+.header #menu-btn{
+  display: none;
+}
+
+/*----------- contact-info -----------*/
+
+.header .contact-info{
+  position: absolute;
+  right: -100%;
+  
+  top:80%;
+  text-align: center;
+  background-color: var(--bg-clr);
+  width: 25rem;
+  height: fit-content;
+  padding: 3rem 2rem; 
+}
+.header .contact-info.active{
+  right: 0;
+  
+}
+.contact-info #close-info{
+  background-color: var(--bg-clr);
+  font-size: 1.8rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  &:hover{
+    transform: rotate(90deg);
+  }
+}
+.header .contact-info .info,.share{
+  background: var(--bg-clr);
+  line-height: 0.5rem;
+  padding: 1rem 0;
+}
+.info i,p,h3{
+  background-color: var(--bg-clr);
+}
+.info i,.share a{
+  background-color: var(--bg-light);
+  font-size: 2rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  color: var(--clr);
+}
+.info i:hover,.share a:hover{
+  color: var(--bg-clr);
+  background-color: var(--clr);
+  cursor: pointer;
+}
+.info h3{
+  padding: 0.5rem 0;
+}
+.contact-info .share{
+  border-top: 0.2rem solid var(--clr);
+  margin: 0 2rem;
+}
+
+
+
+ /* -------------### for responsive-navbar ###------------- */
+@media (max-width: 991px) {
+  .header #menu-btn{
+    display: inline-block;
+  }
+  .header .navbar{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: var(--bg-clr);
+    width: 25rem;
+    height: fit-content;
+    & a{
+      margin: 1rem;
+      text-align: center;
+    }
+  }
+  .header .navbar.active{
+    right: 0;
+  }
+  .header .navbar a{
+    width: 25rem;
+  }
+  .header .logo img{
+    width: 150px;
+  }
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Home page !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+#corousel .img{
+  width: 100%;
+  height: auto;
+}
+.home #content{
+  height: 40%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 10vh;
+  background: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+}
+#content h1 span,#content2 h1 span,#content3 h1 span{
+  font-size: 4rem;
+  padding-bottom: 2rem;
+}
+.home #content2{
+  height: 100%;
+  width: 100%;
+  left: 0;
+  text-align: left;
+  bottom: 0;
+  background: linear-gradient(to bottom right,rgba(0,0,0,1),rgba(0,0,0,0));
+}
+#content2 h1{
+  position: relative;
+  padding-left: 5rem;
+  padding-bottom: 2rem;
+}
+@media(max-width: 800px){
+  #content h1 span,#content2 h1 span,#content3 h1 span{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  .home h1{
+    font-size: 17px;
+  }
+  #corousel .img{
+    height: 320px;
+    background-position: center;
+    width: 200%;
+    background-size: contain;
+  }
+  #content2 h1{
+    position: relative;
+    padding-left: 5rem;
+    padding-top: 10rem;
+  }
+}
+
+#content2 h2{
+  font-size: 3rem;
+}
+.home #content3{
+  height: 100%;
+  width: 90%;
+  padding-top: 15%;
+  bottom: 0;
+  text-align: right;
+  background: linear-gradient(to left,rgba(0,0,0,1),rgba(0,0,0,0)); 
+}
+
+#content3 h1{
+  width: 85%;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! About page !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#about{
+  background-color: rgb(206, 202, 202);
+  
+}
+
+/*----------------- Data -----------------*/
+#about-data #data{
+  display: flex;
+  flex-flow: wrap;
+}
+#data #box{
+  display: flexbox;
+  justify-content: center;
+  margin: 2rem;
+
+  width:300px;
+  text-align: center;
+  height: auto;
+  background: linear-gradient(to top,rgba(255, 255, 255, 0.315),rgba(255, 255, 255, 0.993));
+
+  &:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 6px 1px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+  }
+}
+#about-data #data div span{
+    font-size: 30px;
+    font-weight: bolder;
+}
+@media (max-width:800px){
+  #data #box{
+    height: auto;
+  }
+  #about-data #data div span{
+    font-size: 20px;
+}
+  #about-data h4{
+    font-size: 8px;
+  }
+}
+
+/*--------------- Founder ----------------*/
+#about-data #founder{
+  display: flex;
+  background-color: white;
+  background: linear-gradient(to top,rgba(255, 255, 255, 0.315),rgba(255, 255, 255, 0.993));
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  & #info{
+    width: 60%;
+  }
+  & p{
+    background-color: transparent;
+  }
+  & #p-info{
+    margin: 1rem auto ;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+}
+#about #founder:hover{
+  box-shadow: 7px 7px 6px 1px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+}
+#founder #p-info #img{
+  width: 300px;
+  height: 200px;
+  border-top-right-radius: 10%;
+  overflow: hidden;
+  & img{
+    width: 100%;
+    height: 100%;  
+  }
+}
+#founder #p-info h3{
+  border-bottom-left-radius: 20px;
+  padding: 10px;
+}
+#founder #info h2{
+    border-left: 5px solid black;
+    padding-left: 5px;
+}
+@media (max-width:1100px){
+    #founder #p-info #img{
+      width: 200px;
+      height: 150px;
+    }
+}
+
+/*-------------- mission-vission ----------------*/
+#about-data #mission-vision{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#mission-vision #mission,#mission-vision #vision{
+  width: 550px;
+  background: linear-gradient(to top,rgba(255, 255, 255, 0.315),rgba(255, 255, 255, 0.993));
+  & #img{
+    width: 100%;
+    overflow: hidden;
+  }
+}
+#mission-vision #mission:hover,#mission-vision #vision:hover{
+  box-shadow: 7px 7px 6px 1px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+}
+#mission-vision .card:hover #img img,#about #founder:hover #img img{
+  transform: scale(1.3,1.3);
+  transition: 10s linear;
+
+}
+#mission-vision #info{
+  text-align: center;
+
+  & h2{
+    font-weight: 500;
+  }
+  & span{
+    font-weight: 600;
+  }
+  & p{
+    padding: 10px;
+    background-color: transparent;
+    line-height: 2.5rem;
+  }
+}
+#mission-vision hr{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+@media (max-width:1410px){
+  #service #mission-vision{
+    justify-content: center;
+  }
+}
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Services page !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#service #service-data .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  & .card{
+    width: 350px;
+    height: 250px;
+    color: black;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  & #cov{
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background: linear-gradient(to top,rgba(0, 0, 0, 0.289),rgba( 0, 0, 0, 0));
+  }
+  & .area{
+    background-color: aqua;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  & h2{
+    width: 100%;
+    margin: 0%;
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+  }
+}
+#service-data .container .card:hover{
+  transform: scale(1.25,1.25);
+  transition: 5s;
+}
+#service #service-data .container #cov:hover{
+    font-size: 35px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top,rgba(0, 0, 0, 0.7),rgba( 0, 0, 0, 0.7));
+    & h2{
+      font-size: 35px;
+      background-color: transparent;
+      color: #fff;
+    }
+  }
+#service #service-data .container #card_1{
+  background-image: url("./Images/service_03.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#service #service-data .container #card_2{
+  background-image: url("./Images/service_01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#service #service-data .container #card_3{
+  background-image: url("./Images/service_04.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#service #service-data .container #card_4{
+  background-image: url("./Images/service-05.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}#service #service-data .container #card_5{
+  background-image: url("./Images/service_07.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}#service #service-data .container #card_6{
+  background-image: url("./Images/service_06.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  Project Page !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#project{
+  background-color: rgb(206, 202, 202);
+  
+}
+.project-data{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#project-card{
+  width: 25rem;
+}
+.project-data #project-card{
+  & img{
+    object-fit: cover;
+    height: 20rem;
+  }
+  
+}
+@media(max-width:570px){
+  #project-card{
+    width: 80%;
+    & img{
+      height: auto;
+    }
+  }
+}
+#project-card:hover{
+  transform: scale(1.2,1.2);
+}
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  Contact Page !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.contact{
+  margin: 0;
+  background-color: rgb(206, 202, 202);
+  padding: 0;
+  color: black;
+}
+.contact h1{
+  padding-top: 3rem;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.contact-data{
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact .contact-tag{
+  margin: 3rem auto;
+  padding: 1.5rem 1rem;
+  width: 900px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.308);
+  box-shadow: 1px 1px 15px 5px rgba(0, 0, 0, 0.3);
+}
+.contact #map{
+  width: 600px;
+  height: 400px; 
+  border: 0; 
+  filter: brightness(90%);
+  border: 1px solid rgba(255, 255, 255, 0.308);
+  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.3);
+  border-radius: 20px;  
+}
+@media (max-width:800px){
+  .contact #map{
+    width: 100%;
+    height: 300px;
+  }
+}
+.contact .contact-info{
+  border: 1px solid rgba(255, 255, 255, 0.192);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5%;
+  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.3);
+  margin: 2rem 0;
+}
+
+.contact .contact-info #info{
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  font-size: var(--header-font);
+}
+.contact .contact-info #info h4{
+  line-height: 2.5rem;
+  font-size: 22px;
+}
+.contact .contact-info #info i{
+  font-size: 40px;
+}
+@media (max-width:600px){
+  .contact .contact-info #info h4{
+    font-size: 15px;
+  }
+  .contact .contact-info #info i{
+    font-size: 20px;
+  }
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Footer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.footer{
+  color: var(--bg-clr);
+  height: auto;
+  background-color: var(--clr);
+  text-align: center;
+  & hr{
+    border: 2px solid ;
+  }
+}
+.row h1{
+  font-weight: 500;
+}
+.row #box1 a{
+  display: flex;
+  color: var(--bg-clr);
+  font-size: 1.8rem;
+  text-decoration: none;
+  justify-content: center;
+  &:hover{
+    letter-spacing: 4px;
+    font-weight: 500;
+  }
+}
+.row #box2 a{
+  display: flexbox;
+  color: var(--bg-clr);
+  font-size: 3rem;
+  text-decoration: none;  
+  justify-content: center;
+  transition: 0.3s;
+  margin: 1rem 1.2rem;
+  &:hover{
+    transform: translateY(-10px);
+    filter: drop-shadow(0px 50px 3px gray);
+  }
+}
+.row #box3 img{
+  width: 80%;
+  border: 1px solid var(--bg-clr);
+ }
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Review !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+ 
+.review h1{
+  text-align: center;
+  font-weight: bolder;
+  font-size: var(--title-font);
+  padding-bottom: 2rem;
+}
+#review #review-data{
+  padding: 3rem;
+}
+#review {
+  background-size: cover;
+  width: 100%;
+  padding: 0%;
+}
+#review #swiper,#review #swiper-slide p, #review #swiper-slide h3{
+  background-color: transparent;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#review .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background-color: rgba(92, 106, 131, 0.4);
+  display: flex;
+  object-position: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  
+  & p{
+    padding: 1rem 5rem;
+  }
+}
+#review #swiper-slide img {
+  display: block;
+  width: 20%;
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 250px;
+  object-fit: cover;
+}
+@media (max-width:800px){
+  #review #swiper-slide img{
+    width: 30%;
+    height: 100px;
+  }
+}
+
